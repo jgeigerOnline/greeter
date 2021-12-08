@@ -1,0 +1,12 @@
+receiver/.idea/
+receiver/target/
+
+sender/go/.idea/
+
+sender/java/.idea/
+sender/java/target/
+
+sender/nodejs/.idea/
+
+sender/python/.idea/
+

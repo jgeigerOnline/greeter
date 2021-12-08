@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: curl-greeter
+  namespace: knowledge-transfer
+spec:
+  ttlSecondsAfterFinished: 5
+  template:
+    spec:
+      containers:
+        - name: curl
+          image: curlimages/curl:7.80.0
+          command: ["curl"]
+          args: ["-X", "POST", "-H", "Content-Type: text/plain", "-d", "Hello from cURL!", "http://greeter"]
+      restartPolicy: Never
+

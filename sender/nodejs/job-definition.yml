@@ -1,0 +1,14 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: nodejs-greeter
+  namespace: knowledge-transfer
+spec:
+  ttlSecondsAfterFinished: 5
+  template:
+    spec:
+      containers:
+        - name: nodejs
+          image: localhost:5000/greeter-sender-nodejs
+      restartPolicy: Never
+

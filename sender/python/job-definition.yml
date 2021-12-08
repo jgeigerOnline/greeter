@@ -1,0 +1,14 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: python-greeter
+  namespace: knowledge-transfer
+spec:
+  ttlSecondsAfterFinished: 5
+  template:
+    spec:
+      containers:
+        - name: go
+          image: localhost:5000/greeter-sender-python
+      restartPolicy: Never
+

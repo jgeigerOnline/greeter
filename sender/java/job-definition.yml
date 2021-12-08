@@ -1,0 +1,14 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: java-greeter
+  namespace: knowledge-transfer
+spec:
+  ttlSecondsAfterFinished: 5
+  template:
+    spec:
+      containers:
+        - name: java
+          image: localhost:5000/greeter-sender-java
+      restartPolicy: Never
+
