@@ -1,0 +1,17 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: greeter-receiver
+  namespace: knowledge-transfer
+  labels:
+    app: greeter
+    type: receiver
+spec:
+  containers:
+    - name: greeter-receiver
+      image: localhost:5000/greeter-receiver:latest
+      ports:
+        - name: http
+          containerPort: 10080
+          protocol: TCP
+
