@@ -1,0 +1,14 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: rust-greeter
+  namespace: knowledge-transfer
+spec:
+  ttlSecondsAfterFinished: 5
+  template:
+    spec:
+      containers:
+        - name: rust
+          image: localhost:5000/greeter-sender-rust
+      restartPolicy: Never
+

@@ -10,3 +10,8 @@ sender/nodejs/.idea/
 
 sender/python/.idea/
 
+sender/rust/.idea
+sender/rust/Cargo.lock
+sender/rust/rust.iml
+sender/rust/target
+
