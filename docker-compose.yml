@@ -1,0 +1,14 @@
+version: "3.3"
+services:
+  greeter-receiver:
+    image: localhost:5000/greeter-receiver:latest
+    expose:
+      - 10080
+  greeter-sender:
+    image: curlimages/curl:7.80.0
+    command: ["--connect-timeout", "5", "--retry", "5", "--retry-connrefused", "--retry-delay", "3", "-H", "Content-Type: 'text/plain'", "-d", "Hello from cURL!", "http://greeter:10080"]
+    depends_on:
+      - greeter-receiver
+    links:
+      - greeter-receiver:greeter
+
