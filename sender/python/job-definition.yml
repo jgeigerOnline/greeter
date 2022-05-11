@@ -8,7 +8,7 @@ spec:
   template:
     spec:
       containers:
-        - name: go
+        - name: python
           image: localhost:5000/greeter-sender-python
       restartPolicy: Never
 
